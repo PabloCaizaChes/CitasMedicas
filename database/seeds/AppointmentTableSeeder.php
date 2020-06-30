@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Appointment;
 
-class AppointmentsTableSeeder extends Seeder
+class AppointmentTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
