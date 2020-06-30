@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\User;
-class UserTableSeeder extends Seeder
+class UsersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,7 +17,7 @@ class UserTableSeeder extends Seeder
         'password' => bcrypt('chesterman1993'), // password
         'cedula'=>'1717597510',
         'address'=>'Gatazo s22-129',
-        'phone'=>'098925383',
+         'phone'=>'098925383',
         'role'=>'admin'
 
 
