@@ -58,7 +58,7 @@
               <a href="{{ route('password.request') }}" class="text-light"><small>Olvidaste tu Contraseña?</small></a>
             </div>
             <div class="col-6 text-right">
-              <a href="{{ route('register') }}" class="text-light"><small>Registrate es Gratis</small></a>
+              <a href="{{ route('register') }}" class="text-light"><small>Karen te amo registrate mua</small></a>
             </div>
           </div>
         </div>
