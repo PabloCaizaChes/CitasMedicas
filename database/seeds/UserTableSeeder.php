@@ -25,7 +25,7 @@ class UserTableSeeder extends Seeder
 
         User::create([
         'name' => 'Luis Caiza' ,
-        'email' => 'paciente@hotmail.com',
+        'email' => 'doctor@hotmail.com',
         'password' => bcrypt('secret'), // password
         'cedula'=>'1717597502',
         'address'=>'Gatazo s22-124',
@@ -37,7 +37,7 @@ class UserTableSeeder extends Seeder
 
         User::create([
         'name' => 'David Caiza' ,
-        'email' => 'doctor@hotmail.com',
+        'email' => 'paciente@hotmail.com',
         'password' => bcrypt('secret'), // password
         'cedula'=>'1717597505',
         'address'=>'Gatazo s22-123',
