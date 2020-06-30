@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             
             $table->string('password');
 
-            $table->string('cedula');
+            $table->string('cedula')->nullable();
             
             $table->string('address')->nullable();
 

@@ -11,10 +11,8 @@
           
             <div class="card-body px-lg-5 py-lg-5">
               
-
                @if($errors->any())
                
-
             <div class="alert alert-danger" role="alert">
             {{$errors->first()}}
                 </div>
