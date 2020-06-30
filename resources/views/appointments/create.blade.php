@@ -16,7 +16,7 @@
               </div>
             </div>
         <div class="card-body">
-
+          
 @if ($errors->any())
 <div class="alert alert-danger" role ="alert">
   <ul>
@@ -69,21 +69,42 @@
         id="date" name="scheluded_date" type="text" value="{{ old('scheluded_date',date('Y-m-d')) }}" 
         data-date-format="yyyy-mm-dd"
          data-date-start-date="{{ date('Y-m-d') }}"
-          data-date-end-date="+30d">
+          data-date-end-date="+80d">
     </div>
             </div>
               <div class="form-group">
               <label for="address">Hora de Atencion</label>
              <div id="hours">
+              @if($intervals)
+              @foreach($intervals['morning'] as $key => $interval)
+              <div class="custom-control custom-radio mb-3">
+                <input type="radio" id="intervalMorning{{ $key }}" name="scheluded_time" value=" {{ $interval['start']}}" class="custom-control-input"  required>
+                <label class="custom-control-label" for="intervalMorning{{ $key }}">{{ $interval['start']}} - {{ $interval['end']}}</label>
+              </div>
+
+              @endforeach
+              @foreach($intervals['afternoon'] as $keya => $interval)
+              <div class="custom-control custom-radio mb-3">
+              
+
+                <input type="radio" id="intervalAfternoon{{ $keya }}" name="scheluded_time" value=" {{ $interval['start']}}" class="custom-control-input"  required>
+                <label class="custom-control-label" for="intervalAfternoon{{ $keya }}" >{{ $interval['start']}} - {{ $interval['end']}}</label>
+              </div>              
+              
+              @endforeach
+              @else
+              
                <div class="alert alert-info" role="alert">
                  Selecciona un medico y una fecha para observar su hora de disponibilidad
                </div>
-
+  
+              @endif
              </div>
-            </div>
 
+            </div>
+          
               <div class="form-group">
-              <label for="type">Tipo de Consulta</label>
+              <label for="type">Tipo de Servicio</label>
               <div class="custom-control custom-radio mb-3">
         <input  id="type1" name="type" class="custom-control-input"  type="radio"
         @if(old('type') == 'Consultas' ) checked @endif value="Consultas">
@@ -100,6 +121,7 @@
         @if(old('type') == 'Operacion') checked @endif value="Operacion">
             <label class="custom-control-label" for="type3">Operacion</label>
             </div>
+            
             </div>
 
             <button type="submit" class="btn btn-primary">

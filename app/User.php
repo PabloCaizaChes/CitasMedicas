@@ -33,6 +33,8 @@ class User extends Authenticatable
         return $this ->belongsToMany(Specialty::class)->withTimestamps();
     }
 
+   
+
     public function scopePatients($query){
         return $query->where('role','patient' );
     }
@@ -40,7 +42,25 @@ class User extends Authenticatable
  public function scopeDoctors($query){
         return $query->where('role','doctor');
     }
+public function asDoctorAppointments()
+    {
+        return $this->hasMany(Appointment::class, 'doctor_id');
+    }
 
+    public function attendedAppointments()
+    {
+        return $this->asDoctorAppointments()->where('status', 'Atendida');
+    }
+
+    public function cancelledAppointments()
+    {
+        return $this->asDoctorAppointments()->where('status', 'Cancelada');
+    }
+    
+    public function asPatientAppointments()
+    {
+        return $this->hasMany(Appointment::class, 'patient_id');
+    }
     /**
      * The attributes that should be cast to native types.
      *

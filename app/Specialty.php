@@ -11,6 +11,11 @@ class Specialty extends Model
 
     	return $this ->belongsToMany(User::class)->withTimestamps();
     }
-    //
+    //N $appointments
+    public function specialty() {
+
+    	return $this->belongsTo(Specialty::class);
+    }
+    
     
 }
