@@ -53,12 +53,10 @@ Route::post('/appointments/{appointment}/confirm', 'AppointmentController@postco
 //apointment / id appointment / y cancelar
 
 
-});
+
 
 //json
 
-Route::get('/specialties/{specialty}/doctors', 'Api\SpecialtyController@doctors');
-Route::get('/schedule/hours', 'Api\ScheduleController@hours');
 
 
-
+});
